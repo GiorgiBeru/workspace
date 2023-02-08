@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url("./assets/HelveticaNeue.ttc");
+}
+
+body {
+  background: url(./assets/shutterstock_2189773743\ 1.png);
+  background-size: cover;
+}
+
+button {
+  text-transform: uppercase;
+}

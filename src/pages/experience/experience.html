@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="experience.css" />
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.5.2/rxjs.umd.js"
+    ></script>
+    <script defer type="module" src="experience.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <i class="fas fa-chevron-left prev"></i>
+    <div class="container">
+      <div class="top">
+        <p class="exp">გამოცდილება</p>
+        <p class="top-p">2/3</p>
+      </div>
+      <hr />
+      <div id="add-more-exp">
+        <div class="position">
+          <label for="position">თანამდებობა</label>
+          <input
+            type="text"
+            id="position"
+            placeholder="დეველოპერი, დიზაინერი, ა.შ."
+          />
+          <p>მინიმუმ 2 სიმბოლო</p>
+        </div>
+        <div class="employer">
+          <label for="employer">დამსაქმებელი</label>
+          <input type="text" id="employer" placeholder="დამსაქმებელი" />
+          <p>მინიმუმ 2 სიმბოლო</p>
+        </div>
+        <div class="dates">
+          <div class="start-date">
+            <label for="start-date">დაწყების რიცხვი</label>
+            <br />
+            <input
+              type="date"
+              id="start-date"
+              placeholder="mm / dd / yy"
+              data-date-format="MM DD YYYY"
+            />
+          </div>
+          <div class="end-date">
+            <label for="end-date">დამთავრების რიცხვი</label>
+            <br />
+            <input
+              type="date"
+              id="end-date"
+              data-date-format="MM DD YYYY"
+              placeholder="mm / dd / yy"
+            />
+          </div>
+        </div>
+        <div class="description">
+          <p>აღწერა</p>
+          <textarea placeholder="როლი თანამდებობაზე და აღწერა"></textarea>
+        </div>
+        <hr />
+      </div>
+      <div class="more-exp">
+        <button>მეტი გამოცდილების დამატება</button>
+      </div>
+      <div class="btn">
+        <button class="go-back">უკან</button>
+        <button class="next">შემდეგი</button>
+      </div>
+    </div>
+    <div class="generatedCV" id="generatedCV"></div>
+  </body>
+</html>
