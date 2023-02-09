@@ -58,6 +58,5 @@ document.getElementById("phone").addEventListener("focusout", () => {
 });
 
 document.getElementById("basicInfo").addEventListener("focusout", () => {
-  validateExistance("basicInfo");
   populateData("basicInfo");
 });
