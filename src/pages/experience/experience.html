@@ -45,7 +45,7 @@
             <br />
             <input
               type="date"
-              id="start-date"
+              id="startDate"
               placeholder="mm / dd / yy"
               data-date-format="MM DD YYYY"
             />
@@ -55,7 +55,7 @@
             <br />
             <input
               type="date"
-              id="end-date"
+              id="endDate"
               data-date-format="MM DD YYYY"
               placeholder="mm / dd / yy"
             />
@@ -63,7 +63,10 @@
         </div>
         <div class="description">
           <p>აღწერა</p>
-          <textarea placeholder="როლი თანამდებობაზე და აღწერა"></textarea>
+          <textarea
+            id="roleDescription"
+            placeholder="როლი თანამდებობაზე და აღწერა"
+          ></textarea>
         </div>
         <hr />
       </div>
@@ -71,8 +74,8 @@
         <button>მეტი გამოცდილების დამატება</button>
       </div>
       <div class="btn">
-        <button class="go-back">უკან</button>
-        <button class="next">შემდეგი</button>
+        <button class="go-back" id="goBack">უკან</button>
+        <button class="next" id="goNext">შემდეგი</button>
       </div>
     </div>
     <div class="generatedCV" id="generatedCV"></div>

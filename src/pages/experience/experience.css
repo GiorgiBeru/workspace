@@ -255,3 +255,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: 100px;
   height: 100px;
 }
+.CV-error.border {
+  border: red solid 1px;
+}

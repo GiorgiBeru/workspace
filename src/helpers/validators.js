@@ -1,20 +1,20 @@
-import { removeLocalStorage } from "./populateLocalStorage.js";
+import { addErrorClasslist, removeErrorClassList } from "./classLists.js";
+import { removeLocalStorage, setLocalStorage } from "./populateLocalStorage.js";
 
-export let photoIsValid = false;
 export function requirePhoto(val) {
-  photoIsValid = !!val;
+  if (!!val) setLocalStorage("validPhoto", true);
 }
 
-export function requireEmail(val) {
-  if (!val) {
+export function checkEmailValidity() {
+  const emailElement = document.getElementById("email");
+  const email = emailElement.value;
+  if (!email || !email.endsWith("@redberry.ge")) {
     removeLocalStorage("email");
-    return false;
+    addErrorClasslist(emailElement);
+  } else {
+    setLocalStorage("email", email);
+    removeErrorClassList(emailElement);
   }
-  if (!val.endsWith("@redberry.ge")) {
-    removeLocalStorage("email");
-    return false;
-  }
-  return true;
 }
 
 export function stringifyPhotoObject(photoObj) {
@@ -30,24 +30,63 @@ export function stringifyPhotoObject(photoObj) {
   });
 }
 
-export function validatePhoneNumber(val) {
-  if (!val) {
+export function validatePhoneNumber() {
+  const phoneElement = document.getElementById("phone");
+  const phone = phoneElement.value;
+  if (!phone || !/^\+995\d+$/.test(phone) || phone.length !== 13) {
     removeLocalStorage("phone");
-    return false;
-  }
-  if (val.length > 4) {
-    return /^\+995\d+$/.test(val) ? true : removeLocalStorage("phone");
+    addErrorClasslist(phoneElement);
+  } else {
+    setLocalStorage("phone", phone);
+    removeErrorClassList(phoneElement);
   }
 }
 
-export function validatePosition(type, val) {
-  if (!val) {
+export function validatePosition(type) {
+  const positionElement = document.getElementById(type);
+  const position = document.getElementById(type).value;
+  if (!position || position.length < 2) {
     removeLocalStorage(type);
-    return false;
+    addErrorClasslist(positionElement);
+  } else {
+    setLocalStorage(type, position);
+    removeErrorClassList(positionElement);
   }
-  if (val.length < 2) {
+}
+
+export function validateDate(type) {
+  const DateElement = document.getElementById(type);
+  const Date = DateElement.value;
+  if (!Date || Date.length < 8) {
     removeLocalStorage(type);
-    return false;
+    addErrorClasslist(DateElement);
+  } else {
+    setLocalStorage(type, Date);
+    removeErrorClassList(DateElement);
   }
-  return true;
+}
+
+export function validateExistance(type) {
+  const existingElement = document.getElementById(type);
+  const existing = existingElement.value;
+  if (!existing) {
+    removeLocalStorage(type);
+    addErrorClasslist(existingElement);
+  } else {
+    setLocalStorage(type, existing);
+    removeErrorClassList(existingElement);
+  }
+}
+
+export function checkNameValidation(type) {
+  const nameElement = document.getElementById(type);
+  const name = nameElement.value;
+  const GeorgianRegex = /^[ა-ჰ]+$/;
+  if (!name || name.length < 2 || !GeorgianRegex.test(name)) {
+    removeLocalStorage(type);
+    addErrorClasslist(nameElement);
+  } else {
+    setLocalStorage(type, name);
+    removeErrorClassList(nameElement);
+  }
 }

@@ -24,5 +24,10 @@ export function renderData(data) {
     <p>${data?.employer || ""}</p>
     </div>
     </div>
+    <div class="CV-name">
+    <p>${data?.startDate || ""}</p>
+    <p>${data?.endDate || ""}</p>
+    </div>
+    <p>${data?.roleDescription || ""}</p>
   `;
 }

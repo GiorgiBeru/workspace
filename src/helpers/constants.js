@@ -17,4 +17,13 @@ export const data = {
   employer: localStorage.getItem("employer")
     ? localStorage.getItem("employer")
     : null,
+  startDate: localStorage.getItem("startDate")
+    ? localStorage.getItem("startDate")
+    : null,
+  endDate: localStorage.getItem("endDate")
+    ? localStorage.getItem("endDate")
+    : null,
+  roleDescription: localStorage.getItem("roleDescription")
+    ? localStorage.getItem("roleDescription")
+    : null,
 };
