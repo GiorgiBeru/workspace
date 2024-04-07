@@ -1,29 +1,17 @@
+function retrieveItem(key) {
+  return localStorage.getItem(key) ? localStorage.getItem(key) : null;
+}
+
 export const data = {
-  firstname: localStorage.getItem("firstname")
-    ? localStorage.getItem("firstname")
-    : null,
-  lastname: localStorage.getItem("lastname")
-    ? localStorage.getItem("lastname")
-    : null,
-  photo: localStorage.getItem("photo") ? localStorage.getItem("photo") : null,
-  email: localStorage.getItem("email") ? localStorage.getItem("email") : null,
-  phone: localStorage.getItem("phone") ? localStorage.getItem("phone") : null,
-  basicInfo: localStorage.getItem("basicInfo")
-    ? localStorage.getItem("basicInfo")
-    : null,
-  position: localStorage.getItem("position")
-    ? localStorage.getItem("position")
-    : null,
-  employer: localStorage.getItem("employer")
-    ? localStorage.getItem("employer")
-    : null,
-  startDate: localStorage.getItem("startDate")
-    ? localStorage.getItem("startDate")
-    : null,
-  endDate: localStorage.getItem("endDate")
-    ? localStorage.getItem("endDate")
-    : null,
-  roleDescription: localStorage.getItem("roleDescription")
-    ? localStorage.getItem("roleDescription")
-    : null,
+  firstname: retrieveItem("firstname"),
+  lastname: retrieveItem("lastname"),
+  photo: retrieveItem("photo"),
+  email: retrieveItem("email"),
+  phone: retrieveItem("phone"),
+  basicInfo: retrieveItem("basicInfo"),
+  position: retrieveItem("position"),
+  employer:retrieveItem("employer"),
+  startDate: retrieveItem("startDate"),
+  endDate: retrieveItem("endDate"),
+  roleDescription: retrieveItem("roleDescription"),
 };
